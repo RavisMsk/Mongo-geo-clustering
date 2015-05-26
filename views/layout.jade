@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(ng-app='geo-clustering')
+    block content
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.2/lodash.min.js')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0-rc.1/angular.min.js')
+    script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.1.1/angular-google-maps.min.js')
+    script(type='text/javascript', src='/javascripts/geohash.js')
+    script(type='text/javascript', src='/javascripts/app.js')

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    div(ng-controller='MapController')
+        h3(style='display: inline-block;') Back-End objects limiting (cropping inside Node.js, otherwise in MongoDB): {{backEndCropping}}
+        button(ng-click='switchCroppingVariant()', style='display: inline-block;') Switch cropping
+        ui-gmap-google-map.angular-google-map-container(center='map.center', zoom='map.zoom', events='map.events', control='map.control', bounds='map.bounds', pan=true, dragging='map.dragging')
+            ui-gmap-markers(models='map.markers', coords="'self'", click="markerClicked")
+                ui-gmap-windows(show="'showWindow'", closeClick="'closeClick'")
+                    div
+                        p(ng-non-bindable) Geohash квадранта - {{ _id }}
+                        p(ng-non-bindable) Объектов в группе - {{ count }}
+                        p(ng-non-bindable) Объекты: {{ pointsData }}
+                        p(ng-non-bindable) Loc: [ {{longitude | number: 4}}, {{latitude | number: 4}} ]

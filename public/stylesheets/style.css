@@ -1,0 +1,15 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.angular-google-map-container {
+  /*margin: 10% 10%;*/
+  /*width: 80%;*/
+  /*height: 80%;*/
+  height: 500px;
+}
