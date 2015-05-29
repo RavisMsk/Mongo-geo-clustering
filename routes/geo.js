@@ -10,10 +10,10 @@ var express = require('express'),
 var router = express.Router();
 
 /**
- *
- * @param bottomLeft
- * @param upperRight
- * @param fullCrop
+ * Constructs an aggregate query with bbox coordinates, calculating grouping/resolution factor.
+ * @param bottomLeft SW coords.
+ * @param upperRight NE coords.
+ * @param fullCrop Should MongoDB crop all results out during aggregation if there are > 5 points in group.
  * @returns {{query: *[], geoHashes: *[], resolutionFactor: *}}
  */
 var constructQuery = function(bottomLeft, upperRight, zoom, fullCrop) {
@@ -98,7 +98,7 @@ var constructQuery = function(bottomLeft, upperRight, zoom, fullCrop) {
 };
 
 /**
- *
+ * Validating query parameters before handling them.
  * @param req
  * @param res
  * @param next
